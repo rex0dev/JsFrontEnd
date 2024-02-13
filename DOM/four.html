@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: #212121; color:aliceblue;">
+    <ul class="language">
+        <li>javascript</li>
+    </lu>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerText = langName
+        document.getElementsByClassName('language')[0].appendChild(li)
+    }
+    addLanguage("Python")
+
+    function addOptiLanguage(langName){//more optimised than the above because here you dont have to traverse the entire tree
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li) 
+    }
+
+    addOptiLanguage('cpp')
+
+    //edit
+    const secondLang = document.querySelectorAll("li")[1]
+    // secondLang.innerHTML = "mojo"
+    const li = document.createElement('li')
+    li.textContent = "mojo"
+    secondLang.replaceWith(li)
+    // console.log(secondLang)
+
+    //edit
+    const firstLang = document.querySelector('li:first-child')
+    firstLang.outerHTML = '<li>TypeScript</li>'
+
+    //remove
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove()
+
+</script>
+</html>

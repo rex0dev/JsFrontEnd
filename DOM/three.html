@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>three</title>
+</head>
+<body style="background-color: #212121; color: aliceblue;">
+    
+</body>
+<script>
+    const addElem = function(elementName,classname,iD,bdrRadius,padd,bgColor,innerText){
+        const div = document.createElement(elementName)
+        // console.log(div);
+        div.id = iD
+        div.className = classname
+        div.style.backgroundColor = bgColor
+        div.style.fontFamily = "Cascadia Code"
+        // div.setAttribute("title", "genereated title")
+        div.style.borderRadius = bdrRadius
+        div.style.padding = padd
+        div.style.margin = "5px"
+        const text = document.createTextNode(innerText)
+        // div.innerText="hell0"
+        document.body.appendChild(div)
+        div.appendChild(text)
+    }
+addElem('div','name','firstdiv','12px','12px','brown','Instagram')
+addElem('div','name','seconddiv','12px','12px','navy','Facebook')
+
+const arrcolor = ['green','orange']
+for(let i = 0; i<arrcolor.length; i++){
+    addElem('div','name','firstdiv','12px','12px',arrcolor[i],'Instagram')
+}
+
+</script>
+</html>
